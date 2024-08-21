@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-HarkkaApplication<harkka>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "syksy24.harkka.HarkkaApplication",
+            "projectName": "harkka",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
