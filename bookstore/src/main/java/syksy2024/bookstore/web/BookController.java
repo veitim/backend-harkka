@@ -44,13 +44,13 @@ public class BookController {
 
     @GetMapping("editbook/{id}")
 	public String editbook(@PathVariable("id") Long id, Model model) {
-		model.addAttribute("editbook", repository.findById(id));
-		return "editbook";
+	model.addAttribute("editbook", repository.findById(id));
+	return "editbook";
 	}
 
     @GetMapping("delete/{id}")
     public String deleteById(@PathVariable("id") Long id, Model model) {
-        repository.deleteById(id);
-        return "redirect:/booklist";
+    repository.deleteById(id);
+    return "redirect:/booklist";
     }
 }
