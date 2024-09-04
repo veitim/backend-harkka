@@ -1,11 +1,23 @@
 package syksy2024.bookstore.domain;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
+@Entity
 public class Book {
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
     private int price, publicationYear, isbn;
     private String title, author;
 
+    public Book() {
+        super();
+    }
+
     public Book(long id, int price, int publicationYear, int isbn, String title, String author) {
+        super();
         this.id = id;
         this.price = price;
         this.publicationYear = publicationYear;
@@ -15,6 +27,7 @@ public class Book {
     }
 
     public Book(int price, int publicationYear, int isbn, String title, String author) {
+        super();
         this.price = price;
         this.publicationYear = publicationYear;
         this.isbn = isbn;
