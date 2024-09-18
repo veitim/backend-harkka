@@ -5,6 +5,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.NotEmpty;
 
 
 @Entity
@@ -12,8 +13,13 @@ public class Book {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
+    
     private int price, publicationYear, isbn;
-    private String title, author;
+    @NotEmpty(message = "Book's title cannot be empty.")
+    private String title;
+
+    @NotEmpty(message = "Book's author cannot be empty.")
+    private String author;
 
     @ManyToOne
     @JoinColumn(name = "categoryid")

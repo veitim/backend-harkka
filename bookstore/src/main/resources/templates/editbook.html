@@ -8,11 +8,12 @@
 <body>
 	<h1>Muokkaa kirjan tietoja</h1>
 	<div>
-	<form th:object="${editbook}" th:action="@{/addbook}" action="#" method="post">
+	<form th:object="${editBook}" th:action="@{/saveEditedBook}" action="#" method="post">
 			<input type="hidden" id="id" th:field="*{id}" />
 		<div>
             <Label>Title</Label>
 			<input type="text" placeholder="title" th:field="*{title}" />
+			<div th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Error</div>	
         </div>
 		<div>
             <Label>Author</Label>

@@ -6,11 +6,12 @@
     <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
 </head>
 <body>
-	<form action="#" th:action="@{/addbook}" th:object="${book}" method="post">
+	<form action="#" th:action="@{saveBook}" th:object="${book}" method="post">
 		<p>Adding a new book</p>
 		<div>
             <Label>Title</Label>
 			<input type="text" placeholder="title" th:field="*{title}" />
+			<div th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Error</div>	
         </div>
 		<div>
             <Label>Author</Label>
