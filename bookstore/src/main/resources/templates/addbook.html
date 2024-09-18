@@ -24,9 +24,15 @@
             <Label>Year</Label>
 			<input type="text" placeholder="publicationYear" th:field="*{publicationYear}" />
 		</div>
-        <div>
+		<div>
             <Label>Price (€)</Label>
 			<input type="text" placeholder="price" th:field="*{price}" />
+		</div>
+		<div>
+            <Label>Category</Label>
+			<select placeholder="category" th:field="*{category}" class="form-control">
+				<option th:each="category: ${categories}" th:value="${category.categoryid}" th:text="${category.name}"></option>
+			</select>
 		</div>
 		<input type="submit" value="Save" />
 

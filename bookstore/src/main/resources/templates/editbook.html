@@ -29,7 +29,13 @@
         <div>
             <Label>Price (€)</Label>
 			<input type="text" placeholder="price" th:field="*{price}" />
-		</div>			
+		</div>
+		<div>
+            <Label>Category</Label>
+			<select placeholder="category" th:field="*{category}" class="form-control">
+				<option th:each="category: ${categories}" th:value="${category.categoryid}" th:text="${category.name}"></option>
+			</select>
+		</div>
 			<input type="submit" value="Save"></input>
 		</form>
 	</div>
